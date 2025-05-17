@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Silent Commentar</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      background-color: #f9f9f9;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .toggle-button {
+      background-color: #13bb2f;
+      color: white;
+      border: none;
+      padding: 12px 20px;
+      border-radius: 6px;
+      font-size: 1rem;
+      cursor: pointer;
+      margin-bottom: 16px;
+      transition: background-color 0.3s ease;
+    }
+
+    .toggle-button:hover {
+      background-color: #b11616;
+    }
+
+    .comments {
+      background-color: #fff;
+      border: 1px solid #ddd;
+      padding: 16px;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    }
+
+    .comment {
+      margin-bottom: 16px;
+    }
+
+    @media (max-width: 480px) {
+      .toggle-button {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <button id="toggleBtn" class="toggle-button">Tampilkan Komentar</button>
+
+    <div id="commentSection" class="comments" style="display: none;">
+      <div class="comment">
+        <p><strong>Bapak Roihan:</strong> Ini adalah komentar pertama. Sangat responsive dan menarik!</p>
+      </div>
+      <div class="comment">
+        <p><strong>Alifpalinggihan:</strong> Saya setuju dengan komentar sebelumnya. Artikel ini sangat membantu.</p>
+      </div>
+      <div class="comment">
+        <p><strong>Nanda:</strong> Terima kasih telah berbagi informasi ini. Saya menunggu konten berikutnya!</p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const toggleBtn = document.getElementById('toggleBtn');
+    const commentSection = document.getElementById('commentSection');
+
+    toggleBtn.addEventListener('click', () => {
+      const isVisible = commentSection.style.display === 'block';
+      commentSection.style.display = isVisible ? 'none' : 'block';
+      toggleBtn.textContent = isVisible ? 'Tampilkan Komentar' : 'Sembunyikan Komentar';
+    });
+  </script>
+
+</body>
+</html>
